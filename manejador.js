@@ -5,7 +5,7 @@ const date= new Date();
 function root(res, ruta){
     res.sendFile(path.join(__dirname, 'html', ruta));
     console.log("Rutear a : " + ruta);
-    let archivo_accesos= fs.createWriteStream('accesos.txt', {"flags":"a"});
+    let archivo_accesos= fs.createWriteStream('logs/accesos.txt', {"flags":"a"});
     archivo_accesos.write(
         date.toLocaleString() +
         " " + ruta + "\n");
